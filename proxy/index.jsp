@@ -98,7 +98,10 @@
         
     </head>
     <body>
-  <% String retrieveData= (String)request.getAttribute("jsonString"); %>
+  <% 
+        String retrieveStatement= (String)request.getAttribute("jsonString"); 
+        String retrieveUUID= (String)request.getAttribute("uuid"); 
+  %>
       
   <form  action="StatementSenderServlet" method="post">
   <table width="745" height="536" border="0" align="center">
@@ -110,10 +113,16 @@
     <td height="20">&nbsp;</td>
     <td align="center"><input type="Submit" onClick="return validateJSON(1)" name="postjson" value="Validate & Post JSON" /></td>
   </tr>
+  
   <tr>
-      <td height="163"><u>Result</u>  </td>
+      <td height="40"><u>UUID</u>  </td>
     <% //System.out.println(retrieveData); %>
-    <td><%=retrieveData%></td>
+    <td><%=retrieveUUID%></td>
+  </tr>
+  <tr>
+      <td height="130"><u>Result</u>  </td>
+    <% //System.out.println(retrieveData); %>
+    <td><%=retrieveStatement%></td>
   </tr>
 </table>
 </form>

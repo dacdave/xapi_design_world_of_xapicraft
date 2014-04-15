@@ -43,6 +43,8 @@ public class StatementSenderServlet extends HttpServlet
             String s = st.toJSON(true);
         
             request.setAttribute("jsonString", s);
+            request.setAttribute("uuid", uuid.toString());
+            
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
         catch (Exception e)
